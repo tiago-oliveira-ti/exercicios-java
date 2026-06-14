@@ -1,3 +1,6 @@
+package ex02_imc;
+
+
 import java.util.Scanner;
 
 
