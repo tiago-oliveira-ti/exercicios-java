@@ -23,7 +23,16 @@ jobs:
 
     - name: Compilar exercícios
       run: |
-        javac -d bin src/ex01_tabuada/Tabuada.java
-        javac -d bin src/ex02_imc/IMC.java
-        javac -d bin src/ex03_pares_impares/ParesImpares.java
-        javac -d bin src/ex04_divisibilidade/Divisibilidade.java
+        javac -d bin -sourcepath src src/ex01_tabuada/Tabuada.java src/ex02_imc/IMC.java src/ex03_pares_impares/ParesImpares.java src/ex04_divisibilidade/Divisibilidade.java
+
+    - name: Testar Tabuada
+      run: echo "5" | java -cp bin ex01_tabuada.Tabuada
+
+    - name: Testar IMC
+      run: echo "1.75 70" | java -cp bin ex02_imc.IMC
+
+    - name: Testar Pares e Ímpares
+      run: echo "1 10 1" | java -cp bin ex03_pares_impares.ParesImpares
+
+    - name: Testar Divisibilidade
+      run: printf "2\n4\n7\n" | java -cp bin ex04_divisibilidade.Divisibilidade
