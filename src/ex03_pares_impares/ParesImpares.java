@@ -1,6 +1,5 @@
 package ex03_pares_impares;
 
-
 import java.util.Scanner;
 
 public class ParesImpares {
